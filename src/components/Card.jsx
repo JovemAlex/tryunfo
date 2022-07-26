@@ -12,6 +12,9 @@ export default class Card extends Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      showRemoveButton,
+      removeButton,
+      verifySuperTrunfo,
     } = this.props;
 
     return (
@@ -23,7 +26,20 @@ export default class Card extends Component {
         <p data-testid="attr2-card">{cardAttr2}</p>
         <p data-testid="attr3-card">{cardAttr3}</p>
         <p data-testid="rare-card">{cardRare}</p>
-        { cardTrunfo === true && <p data-testid="trunfo-card">Super Trunfo</p> }
+        { cardTrunfo ? <p data-testid="trunfo-card">`Super Trunfo`</p> : '' }
+
+        {
+          showRemoveButton && (
+            <button
+              id={ cardName }
+              type="submit"
+              onClick={ removeButton }
+              onClik={ verifySuperTrunfo }
+              data-testid="delete-button"
+            >
+              Excluir
+            </button>)
+        }
       </div>
     );
   }
@@ -38,4 +54,7 @@ Card.propTypes = {
   cardImage: PropTypes.string.isRequired,
   cardRare: PropTypes.string.isRequired,
   cardTrunfo: PropTypes.bool.isRequired,
+  showRemoveButton: PropTypes.bool.isRequired,
+  removeButton: PropTypes.func.isRequired,
+  verifySuperTrunfo: PropTypes.func.isRequired,
 };

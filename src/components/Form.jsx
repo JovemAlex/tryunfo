@@ -19,7 +19,6 @@ export default class Form extends Component {
     } = this.props;
     return (
       <section>
-        {hasTrunfo}
         <header>
           <h1>Tryunfo!</h1>
         </header>
@@ -29,6 +28,7 @@ export default class Form extends Component {
           <label htmlFor="name-input">
             <p>Nome da carta</p>
             <input
+              name="cardName"
               type="text"
               id="name"
               data-testid="name-input"
@@ -40,6 +40,7 @@ export default class Form extends Component {
           <label htmlFor="description-input">
             <p>Descrição da carta</p>
             <textarea
+              name="cardDescription"
               id="describe"
               cols="30"
               rows="10"
@@ -53,6 +54,7 @@ export default class Form extends Component {
           <label htmlFor="attr1-input">
             Atributo 1
             <input
+              name="cardAttr1"
               type="number"
               id="atributo1"
               data-testid="attr1-input"
@@ -65,6 +67,7 @@ export default class Form extends Component {
           <label htmlFor="attr2-input">
             Atributo 2
             <input
+              name="cardAttr2"
               type="number"
               id="atributo2"
               data-testid="attr2-input"
@@ -77,6 +80,7 @@ export default class Form extends Component {
           <label htmlFor="attr3-input">
             Atributo 3
             <input
+              name="cardAttr3"
               type="number"
               id="atributo3"
               data-testid="attr3-input"
@@ -89,6 +93,7 @@ export default class Form extends Component {
           <label htmlFor="image-input">
             Imagem
             <input
+              name="cardImage"
               type="text"
               id="text2"
               data-testid="image-input"
@@ -101,6 +106,7 @@ export default class Form extends Component {
           <label htmlFor="rare-input">
             Raridade
             <select
+              name="cardRare"
               id="raridade"
               data-testid="rare-input"
               value={ cardRare }
@@ -114,18 +120,20 @@ export default class Form extends Component {
           <br />
           {/* super trunfo */}
           <label htmlFor="trunfo-input">
-            Super trunfo
-            <input
+            Super Trunfo
+            { hasTrunfo ? <span>Você já tem um Super Trunfo em seu baralho</span> : <input
               type="checkbox"
-              id="supertrunfo"
-              data-testid="trunfo-input"
+              name="cardTrunfo"
+              id="trunfo-input"
               checked={ cardTrunfo }
               onChange={ onInputChange }
-            />
+              data-testid="trunfo-input"
+            /> }
           </label>
           <br />
           {/* btn */}
           <button
+            id="btn"
             type="submit"
             data-testid="save-button"
             disabled={ isSaveButtonDisabled }
