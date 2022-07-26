@@ -19,9 +19,15 @@ export default class Form extends Component {
     } = this.props;
     return (
       <section>
+        {hasTrunfo}
+        <header>
+          <h1>Tryunfo!</h1>
+        </header>
+
         <form action="">
           {/* name */}
-          <label htmlFor="name">
+          <label htmlFor="name-input">
+            <p>Nome da carta</p>
             <input
               type="text"
               id="name"
@@ -31,7 +37,8 @@ export default class Form extends Component {
             />
           </label>
           {/* describe */}
-          <label htmlFor="describe">
+          <label htmlFor="description-input">
+            <p>Descrição da carta</p>
             <textarea
               id="describe"
               cols="30"
@@ -41,8 +48,10 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* input atributo */}
-          <label htmlFor="atributo1">
+          <label htmlFor="attr1-input">
+            Atributo 1
             <input
               type="number"
               id="atributo1"
@@ -51,8 +60,10 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* input atributo 2 */}
-          <label htmlFor="atributo2">
+          <label htmlFor="attr2-input">
+            Atributo 2
             <input
               type="number"
               id="atributo2"
@@ -61,8 +72,10 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* input atributo 3 */}
-          <label htmlFor="atributo3">
+          <label htmlFor="attr3-input">
+            Atributo 3
             <input
               type="number"
               id="atributo3"
@@ -71,8 +84,10 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* input de texto 2 */}
-          <label htmlFor="text2">
+          <label htmlFor="image-input">
+            Imagem
             <input
               type="text"
               id="text2"
@@ -81,8 +96,10 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* rarity */}
-          <label htmlFor="raridade">
+          <label htmlFor="rare-input">
+            Raridade
             <select
               id="raridade"
               data-testid="rare-input"
@@ -94,8 +111,10 @@ export default class Form extends Component {
               <option value="muito raro">muito raro</option>
             </select>
           </label>
+          <br />
           {/* super trunfo */}
-          <label htmlFor="supertrunfo">
+          <label htmlFor="trunfo-input">
+            Super trunfo
             <input
               type="checkbox"
               id="supertrunfo"
@@ -104,6 +123,7 @@ export default class Form extends Component {
               onChange={ onInputChange }
             />
           </label>
+          <br />
           {/* btn */}
           <button
             type="submit"
